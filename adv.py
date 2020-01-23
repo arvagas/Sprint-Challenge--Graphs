@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 from world import World
+from queue import Queue
 
 import random
 from ast import literal_eval
