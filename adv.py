@@ -83,6 +83,10 @@ while len(checked_rooms_dict) != len(room_graph):
 
     # If unknowns exist, go in one of the directions
     if len(unknown_exits) != 0:
+        # Shuffling can potentially reach lower (980s)
+        # But could also result higher (1020s)
+        # Random off, currently hits 1003
+        random.shuffle(unknown_exits)
         direction = unknown_exits[0]
         traversal_path.append(direction)
         player.travel(direction)
